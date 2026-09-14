@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>Hold Passo doldur</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0;
+      width: 17.5rem;
+      font: 14px/1.4 Outfit, system-ui, sans-serif;
+      background: #16120f;
+      color: #f4efe8;
+    }
+    main { padding: 1rem 1.05rem 1.1rem; }
+    h1 { margin: 0 0 .2rem; font-size: 1rem; font-weight: 620; }
+    .lead { margin: 0 0 1rem; color: #c4b8ac; font-size: .82rem; }
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      padding: .7rem .8rem;
+      border: 1px solid #3a322b;
+      border-radius: 12px;
+      background: #1d1814;
+    }
+    .row strong { display: block; font-size: .92rem; }
+    .row span { display: block; margin-top: .15rem; color: #c4b8ac; font-size: .75rem; }
+    button.switch {
+      appearance: none;
+      width: 2.6rem;
+      height: 1.5rem;
+      border: 0;
+      border-radius: 999px;
+      background: #5a4d43;
+      position: relative;
+      cursor: pointer;
+      flex: none;
+    }
+    button.switch::after {
+      content: "";
+      position: absolute;
+      top: .16rem;
+      left: .16rem;
+      width: 1.18rem;
+      height: 1.18rem;
+      border-radius: 50%;
+      background: #f4efe8;
+      transition: transform .16s ease;
+    }
+    button.switch.on { background: #2f6f4e; }
+    button.switch.on::after { transform: translateX(1.1rem); }
+    .hint { margin: .85rem 0 0; color: #9c9084; font-size: .75rem; }
+    a { color: #e6d3b8; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Hold Passo doldur</h1>
+    <p class="lead">Sadece Hold aktarmasından sonra açılan Passo girişini doldurur.</p>
+    <div class="row">
+      <div>
+        <strong id="state">Kapalı</strong>
+        <span>Aktarma doldurma</span>
+      </div>
+      <button class="switch" id="toggle" type="button" aria-pressed="false" aria-label="Aç kapat"></button>
+    </div>
+    <p class="hint">Canlı Hold adresini <a href="options.html" target="_blank">seçeneklerden</a> ekle.</p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
