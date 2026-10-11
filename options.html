@@ -5,8 +5,11 @@
   <title>Hold Passo doldur</title>
   <style>
     body { font: 15px/1.45 system-ui, sans-serif; max-width: 36rem; margin: 2rem auto; padding: 0 1rem; color: #16120f; }
-    textarea { width: 100%; min-height: 8rem; font: 13px/1.4 ui-monospace, monospace; }
-    button { margin-top: .75rem; }
+  textarea, input { width: 100%; font: 13px/1.4 ui-monospace, monospace; }
+  textarea { min-height: 8rem; }
+  input { margin-top: .25rem; }
+  label { display: block; margin-top: 1rem; }
+  button { margin-top: .75rem; }
     .muted { color: #6b6258; }
   </style>
 </head>
@@ -14,6 +17,10 @@
   <h1>Hold kökenleri</h1>
   <p class="muted">Aktarma ekranının adresi. Satır başına bir eşleşme, Chrome match pattern: <code>https://hold.example.com/*</code></p>
   <textarea id="origins" spellcheck="false"></textarea>
+  <h1>reCAPTCHA</h1>
+  <p class="muted">Token, Google hesabının açık olduğu bu Chrome’dan okunur. Passo sekmesi açık kalsın. API başka makinedeyse adres ve gizli anahtar, sunucudaki <code>RECAPTCHA_CHROME_SECRET</code> ile aynı olsun.</p>
+  <label>API adresi<input id="api" spellcheck="false" placeholder="http://127.0.0.1:4000"></label>
+  <label>Gizli anahtar<input id="secret" spellcheck="false"></label>
   <button id="save" type="button">Kaydet</button>
   <p id="status" class="muted"></p>
   <script src="options.js"></script>
