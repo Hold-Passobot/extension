@@ -216,7 +216,7 @@ async function pullToken(payload) {
     });
     const token = String(injected?.result || "");
     if (!token) return { message: "reCAPTCHA execute returned an empty token" };
-    return { token };
+    return { token, mintedAt: Date.now() };
   } catch (err) {
     return { message: err?.message || "reCAPTCHA failed in Chrome" };
   }
